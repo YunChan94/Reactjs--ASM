@@ -3,7 +3,7 @@ import "./CityList.css";
 const CityList = (props) => {
   return (
     <div className="cityList">
-      {props.item.map((city) => (
+      {props.cityItem.map((city) => (
         <div className="cityListItem">
           <img src={city.image} className="cityImg"></img>
           <div className="cityTitle">

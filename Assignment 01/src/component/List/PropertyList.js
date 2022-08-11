@@ -3,7 +3,7 @@ import "./PropertyList.css";
 const PropertyList = (props) => {
   return (
     <div className="pList">
-      {props.item.map((prop) => (
+      {props.propertyItem.map((prop) => (
         <div className="pListItem">
           <img src={prop.image} className="pImg"></img>
           <div className="pTitle">

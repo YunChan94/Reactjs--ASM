@@ -1,7 +1,11 @@
+import "./Search.css";
 import Navbar from "../../component/Header/Navbar";
 import NavItems from "../../component/Header/NavItems";
 import Footer from "../../component/Footer/Footer";
-const Detail = () => {
+import SearchPopup from "../../component/Search/SearchPopup";
+import SearchList from "../../component/Search/SearchList";
+
+const Search = () => {
   const navBar = [
     {
       type: "Stays",
@@ -89,10 +93,15 @@ const Detail = () => {
     <div>
       <Navbar />
       <NavItems navItem={navBar} />
-      <h1>Detail Page</h1>
+      <div className="searchContainer">
+        <div className="searchWrapper">
+          <SearchPopup />
+          <SearchList className="listResult" />
+        </div>
+      </div>
       <Footer value={footer} />
     </div>
   );
 };
 
-export default Detail;
+export default Search;
