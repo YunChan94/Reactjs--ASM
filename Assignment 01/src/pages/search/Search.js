@@ -95,8 +95,11 @@ const Search = () => {
       <NavItems navItem={navBar} />
       <div className="searchContainer">
         <div className="searchWrapper">
+          {/* Component để render phần popup nằm bên trái của Page */}
           <SearchPopup />
-          <SearchList className="listResult" />
+
+          {/* Component để render các kết quả của việc tìm kiếm nằm ở bên phải của Page */}
+          <SearchList />
         </div>
       </div>
       <Footer value={footer} />

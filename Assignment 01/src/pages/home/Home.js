@@ -8,6 +8,7 @@ import HotelsList from "../../component/List/HotelsList";
 import RegisterForm from "../../component/Form/RegisterForm";
 import Footer from "../../component/Footer/Footer";
 const Home = () => {
+  // Dữ liệu navbar
   const navBar = [
     {
       type: "Stays",
@@ -35,6 +36,8 @@ const Home = () => {
       active: false,
     },
   ];
+
+  // Dữ liệu hiển thị các thành phố
   const city = [
     {
       name: "Dublin",
@@ -52,6 +55,8 @@ const Home = () => {
       image: "./images/city_3.webp",
     },
   ];
+
+  // Dữ liệu Hiển thị các loại khách sạn
   const property = [
     {
       name: "Hotels",
@@ -79,6 +84,8 @@ const Home = () => {
       image: "./images/type_5.jpg",
     },
   ];
+
+  // Dữ liệu hiển thị các khách sạn
   const hotels = [
     {
       name: "Aparthotel Stare Miasto",
@@ -113,6 +120,8 @@ const Home = () => {
       image_url: "./images/hotel_4.jpg",
     },
   ];
+
+  // Dữ liệu hiển thị footer
   const footer = [
     {
       col_number: 1,
@@ -175,12 +184,18 @@ const Home = () => {
       <NavItems navItem={navBar} />
       <Header />
       <div className="homeContainer">
+        {/* Hiển thị các thành phố */}
         <CityList cityItem={city} />
+        {/* Hiển thị các loại khách sạn */}
         <h1 className="homeTitle">Browse by property type</h1>
         <PropertyList propertyItem={property} />
+
+        {/* Hiển thị các khách sạn */}
         <h1 className="homeTitle">Home guests love</h1>
         <HotelsList hotelItem={hotels} />
       </div>
+
+      {/* Form đăng ký */}
       <RegisterForm />
       <Footer value={footer} />
     </div>
