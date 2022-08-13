@@ -1,5 +1,5 @@
 .navbar {
-  height: 50px;
+  height: 170px;
   background-color: #003580;
   display: flex;
   justify-content: center;
@@ -12,10 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
-.logo {
-  font-weight: 500;
+.navItems {
+  justify-content: right;
 }
 
 .navButton {

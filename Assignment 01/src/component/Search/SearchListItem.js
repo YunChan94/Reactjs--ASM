@@ -8,16 +8,17 @@ const SearchListItem = (props) => {
           <img src={item.image_url} alt="" className="siImg" />
           <div className="siDesc">
             <h1 className="siTitle">{item.name}</h1>
-            <span className="siDistance">{props.describe.distance}</span>
+            <span className="siDistance">{item.distance} from center</span>
             <span className="siTag">{item.tag}</span>
             <span className="siSubtitle">{item.description}</span>
             <span className="siFeatures">{item.type}</span>
             <span className="siCancelOp">{`${
-              props.describe.free_cancel ? "Free cancellation" : ""
+              item.free_cancel ? "Free cancellation" : ""
             }`}</span>
             <span className="siCancelOpSubtitle">{`${
-              item.free_cancel &&
-              "You can cancel later, so lock in this great price today!"
+              item.free_cancel
+                ? "You can cancel later, so lock in this great price today!"
+                : ""
             }`}</span>
           </div>
           <div className="siDetail">

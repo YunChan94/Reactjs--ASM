@@ -6,33 +6,7 @@ import SearchPopup from "../../component/Search/SearchPopup";
 import SearchList from "../../component/Search/SearchList";
 
 const Search = () => {
-  const navBar = [
-    {
-      type: "Stays",
-      icon: "fa-bed",
-      active: true,
-    },
-    {
-      type: "Flights",
-      icon: "fa-plane",
-      active: false,
-    },
-    {
-      type: "Car rentals",
-      icon: "fa-car",
-      active: false,
-    },
-    {
-      type: "Attractions",
-      icon: "fa-bed",
-      active: false,
-    },
-    {
-      type: "Airport taxis",
-      icon: "fa-taxi",
-      active: false,
-    },
-  ];
+  // Dữ liệu footer
   const footer = [
     {
       col_number: 1,
@@ -92,7 +66,6 @@ const Search = () => {
   return (
     <div>
       <Navbar />
-      <NavItems navItem={navBar} />
       <div className="searchContainer">
         <div className="searchWrapper">
           {/* Component để render phần popup nằm bên trái của Page */}
@@ -102,7 +75,7 @@ const Search = () => {
           <SearchList />
         </div>
       </div>
-      <Footer value={footer} />
+      <Footer />
     </div>
   );
 };

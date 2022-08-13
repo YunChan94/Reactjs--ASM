@@ -1,91 +1,12 @@
+import "./Detail.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../component/Header/Navbar";
 import NavItems from "../../component/Header/NavItems";
+import RegisterForm from "../../component/Form/RegisterForm";
 import Footer from "../../component/Footer/Footer";
+import { getDefaultNormalizer } from "@testing-library/react";
 const Detail = () => {
-  const navBar = [
-    {
-      type: "Stays",
-      icon: "fa-bed",
-      active: true,
-    },
-    {
-      type: "Flights",
-      icon: "fa-plane",
-      active: false,
-    },
-    {
-      type: "Car rentals",
-      icon: "fa-car",
-      active: false,
-    },
-    {
-      type: "Attractions",
-      icon: "fa-bed",
-      active: false,
-    },
-    {
-      type: "Airport taxis",
-      icon: "fa-taxi",
-      active: false,
-    },
-  ];
-  const footer = [
-    {
-      col_number: 1,
-      col_values: [
-        "Countries",
-        "Regions",
-        "Cities",
-        "Districts",
-        "Airports",
-        "Hotels",
-      ],
-    },
-    {
-      col_number: 2,
-      col_values: [
-        "Homes",
-        "Apartments",
-        "Resorts",
-        "Villas",
-        "Hostels",
-        "Guest houses",
-      ],
-    },
-    {
-      col_number: 3,
-      col_values: [
-        "Unique places to stay",
-        "Reviews",
-        "Unpacked: Travel articles",
-        "Travel communities",
-        "Seasonal and holiday deals",
-      ],
-    },
-    {
-      col_number: 4,
-      col_values: [
-        "Car rental",
-        "Flight Finder",
-        "Restaurant reservations",
-        "Travel Agents",
-      ],
-    },
-    {
-      col_number: 5,
-      col_values: [
-        "Curtomer Service",
-        "Partner Help",
-        "Careers",
-        "Sustainability",
-        "Press center",
-        "Safety Resource Center",
-        "Investor relations",
-        "Terms & conditions",
-      ],
-    },
-  ];
-
   // Dữ liệu detail
   const detail = {
     name: "Tower Street Apartments",
@@ -108,9 +29,44 @@ const Detail = () => {
   return (
     <div>
       <Navbar />
-      <NavItems navItem={navBar} />
-      <div></div>
-      <Footer value={footer} />
+      <div className="hotelContainer">
+        <div className="hotelWrapper">
+          <button className="bookNow">Reserve or Book Now!</button>
+          <h1 className="hotelTitle">{detail.name}</h1>
+          <div className="hotelAddress">
+            <FontAwesomeIcon icon={faLocationDot} />
+            <span>{detail.address}</span>
+          </div>
+          <span className="hotelDistance">{detail.distance}</span>
+          <span className="hotelPriceHighlight">{detail.price}</span>
+          <div className="hotelImages">
+            {detail.photos.map((photo, i) => (
+              <div className="hotelImgWrapper" key={i}>
+                <img src={photo} alt="" className="hotelImg" />
+              </div>
+            ))}
+          </div>
+          <div className="hotelDetails">
+            <div className="hotelDetailsTexts">
+              <h1 className="hotelTitle">{detail.title}</h1>
+              <p className="hotelDesc">{detail.description}</p>
+            </div>
+            <div className="hotelDetailsPrice">
+              <h1>Perfect for a 9-night stay!</h1>
+              <span>
+                Located in the real heart of Krakow, this property has an
+                excellent location score of 9.8!
+              </span>
+              <h2>
+                <b>${detail.nine_night_price}</b> (9 nights)
+              </h2>
+              <button>Reserve or Book Now!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <RegisterForm />
+      <Footer />
     </div>
   );
 };

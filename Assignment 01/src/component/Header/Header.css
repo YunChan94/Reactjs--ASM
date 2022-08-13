@@ -8,7 +8,7 @@
 .headerContainer {
   width: 100%;
   max-width: 1024px;
-  margin: 20px 0 50px 0;
+  margin-bottom: 50px;
 }
 
 .headerTitle {
@@ -32,7 +32,7 @@
 .headerSearch {
   width: 100%;
   max-width: 1024px;
-  margin-top: 210px;
+  margin-top: 190px;
   display: flex;
   height: 30px;
   background-color: white;
@@ -50,8 +50,9 @@
   gap: 10px;
 }
 
-.headerInput {
+.headerSearchInput {
   border: none;
+  outline: none;
 }
 
 .headerIcon {
@@ -67,4 +68,10 @@
   color: white;
   padding: 10px;
   cursor: pointer;
+}
+
+.date {
+  position: absolute;
+  top: 50px;
+  z-index: 2;
 }

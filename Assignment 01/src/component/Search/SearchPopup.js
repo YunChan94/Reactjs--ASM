@@ -9,7 +9,7 @@ const SearchPopup = () => {
       </div>
       <div className="lsItem">
         <label>Check-in Date</label>
-        <input type="date" placeholder="06/04/2022 to 06/24/2022"></input>
+        <span>06/04/2022 to 06/24/2022</span>
       </div>
       <div className="lsOptions">
         <label>Options</label>

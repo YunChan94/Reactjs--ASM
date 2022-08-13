@@ -1,11 +1,13 @@
 .nav {
-  background-color: #003580;
+  /* background-color: #003580; */
   color: white;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  margin-top: 120px;
+  /* justify-content: left; */
+  /* margin-top: 150px; */
 }
 
-.navContainer {
+.navItemContainer {
   width: 100%;
   max-width: 1024px;
   margin: 20px 0 30px 0;

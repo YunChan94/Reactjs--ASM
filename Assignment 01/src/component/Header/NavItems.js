@@ -2,7 +2,7 @@ import "./NavItems.css";
 const NavItems = (props) => {
   return (
     <div className="nav">
-      <div className="navContainer">
+      <div className="navItemContainer">
         <div className="navList">
           {props.navItem.map((navItem) => (
             <div className={`navListItem ${navItem.active ? "active" : ""}`}>
