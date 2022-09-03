@@ -1,0 +1,33 @@
+.banner {
+  height: 20rem;
+  padding-top: 5%;
+  padding-left: 5%;
+  background-size: cover;
+}
+
+.banner-title {
+  width: 35%;
+}
+
+.banner-title h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.banner-title p {
+  color: white;
+}
+
+.banner-btn {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-btn button {
+  background-color: rgb(80, 76, 86);
+  color: white;
+  border: none;
+  padding: 5% 10%;
+  font-weight: bold;
+}

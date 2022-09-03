@@ -30,12 +30,6 @@ const NavBar = () => {
         <h3>Movie App</h3>
         <SearchButton onClick={gotoSearch} />
       </header>
-      <div className="header-image">
-        <img
-          src="https://image.api.playstation.com/vulcan/ap/rnd/202106/1704/JzL1NLQvok7Pghe9W5PP2XNV.png"
-          alt=""
-        ></img>
-      </div>
     </Fragment>
   );
 };
