@@ -6,12 +6,12 @@
 }
 
 .banner-title {
-  width: 35%;
+  width: 40%;
 }
 
 .banner-title h1 {
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .banner-title p {
@@ -29,5 +29,11 @@
   color: white;
   border: none;
   padding: 5% 10%;
-  font-weight: bold;
+  font-weight: bolder;
+  transition: all 0.5s;
+}
+
+.banner-btn button:hover {
+  transform: scale(1.1);
+  background-color: grey;
 }

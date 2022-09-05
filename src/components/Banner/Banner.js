@@ -14,24 +14,37 @@ const Banner = (props) => {
     };
     sendfetch({ url: props.url }, receiveData);
   }, [sendfetch]);
-  console.log(bannerMovie);
   const backgroundUrl = `http://image.tmdb.org/t/p/w500/${bannerMovie.backdrop_path}`;
-  return (
-    <div
-      className="banner"
-      style={{
-        backgroundImage: `url(${backgroundUrl})`,
-      }}
-    >
-      <div className="banner-title">
-        <h1>{bannerMovie.name}</h1>
-        <div className="banner-btn">
-          <button>Play</button>
-          <button>My List</button>
+
+  let content = <p>Can't found any movies</p>;
+  if (bannerMovie) {
+    content = (
+      <div
+        className="banner"
+        style={{
+          backgroundImage: `url(${backgroundUrl})`,
+        }}
+      >
+        <div className="banner-title">
+          <h1>{bannerMovie.name}</h1>
+          <div className="banner-btn">
+            <button>Play</button>
+            <button>My List</button>
+          </div>
+          <p>{bannerMovie.overview}</p>
         </div>
-        <p>{bannerMovie.overview}</p>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (error) {
+    content = <p>Something went wrong!</p>;
+  }
+
+  if (isLoading) {
+    content = <p>Loading tasks...</p>;
+  }
+
+  return <section>{content}</section>;
 };
 export default Banner;

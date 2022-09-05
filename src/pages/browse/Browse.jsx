@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Browse.css";
 import NavBar from "../../components/NavBar/NavBar";
 import Banner from "../../components/Banner/Banner";
+import MoviesList from "../../components/MoviesList/MoviesList";
 
-import useHttp from "../../hooks/use-http";
 function Browse() {
   const API_KEY = "8d889bf8e18531838dd6a6f6a0ba836c";
   const requests = {
@@ -22,6 +22,14 @@ function Browse() {
     <div className="app">
       <NavBar />
       <Banner url={requests.fetchNetflixOriginals} />
+      <MoviesList url={requests.fetchNetflixOriginals} type="original" />
+      <MoviesList url={requests.fetchTrending} title="Xu hướng" />
+      <MoviesList url={requests.fetchTopRated} title="Xếp hạng cao" />
+      <MoviesList url={requests.fetchActionMovies} title="Hành động" />
+      <MoviesList url={requests.fetchComedyMovies} title="Hài" />
+      <MoviesList url={requests.fetchHorrorMovies} title="Kinh dị" />
+      <MoviesList url={requests.fetchRomanceMovies} title="Lãng mạn" />
+      <MoviesList url={requests.fetchDocumentaries} title="Tài liệu" />
     </div>
   );
 }

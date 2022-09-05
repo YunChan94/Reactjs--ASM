@@ -1,0 +1,28 @@
+.moviesList {
+  width: 100%;
+  padding: 3%;
+}
+
+.moviesList h3 {
+  color: white;
+}
+
+.moviesItem {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-img {
+  cursor: pointer;
+  transition: all 0.5s;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.movie-img:hover {
+  transform: scale(1.1);
+}
