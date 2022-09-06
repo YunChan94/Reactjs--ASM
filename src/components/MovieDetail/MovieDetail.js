@@ -4,8 +4,8 @@ import Modal from "../UI/Modal";
 import useHttp from "../../hooks/use-http";
 const MovieDetail = (props) => {
   const { isLoading, error, sendRequest: sendfetch } = useHttp();
-  const [movieTrailer, setMovieTrailer] = useState(null);
-
+  const [movieTrailer, setMovieTrailer] = useState([]);
+  console.log(props.id);
   //Lấy data
   useEffect(() => {
     const receiveData = (data) => {
@@ -14,13 +14,13 @@ const MovieDetail = (props) => {
     };
     sendfetch(
       {
-        url: `https://api.themoviedb.org/3//movie/${props.id}/videos?api_key=8d889bf8e18531838dd6a6f6a0ba836c`,
+        url: `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=8d889bf8e18531838dd6a6f6a0ba836c`,
       },
       receiveData
     );
-  }, [sendfetch]);
+  }, [sendfetch, props.id]);
+  console.log(movieTrailer);
   let content = <p>Can't found information of the movie!</p>;
-
   if (error) {
     content = <p>Something went wrong!</p>;
   }

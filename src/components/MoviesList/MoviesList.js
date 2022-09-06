@@ -6,12 +6,14 @@ import MovieDetail from "../MovieDetail/MovieDetail";
 const MoviesList = (props) => {
   const [movies, setMovies] = useState([]);
   const [movieDetailIsShown, setMovieDetailIsShown] = useState(false);
-  const [movieDetailId, setMovieDetailId] = useState("");
+  const [movieDetailId, setMovieDetailId] = useState(null);
   //Shown detail của movie
   const showMovieDetailHandler = (e) => {
     setMovieDetailIsShown(true);
-    setMovieDetailId(e.target.id);
-    console.log(e.target.id);
+    if (Number(e.target.id) === movieDetailId) {
+      setMovieDetailIsShown(!movieDetailIsShown);
+    }
+    setMovieDetailId(Number(e.target.id));
   };
 
   //Hide detail của movie
@@ -20,7 +22,8 @@ const MoviesList = (props) => {
   };
 
   //Lấy dữ liệu của movie mở detail
-  const movieDeTail = movies.find((movie) => movie.id == movieDetailId);
+  const movieDeTail = movies.find((movie) => movie.id === movieDetailId);
+
   // Lấy data Trending
   const { isLoading, error, sendRequest: sendfetch } = useHttp();
   useEffect(() => {
@@ -29,7 +32,7 @@ const MoviesList = (props) => {
       setMovies(loadedMovie);
     };
     sendfetch({ url: props.url }, receiveData);
-  }, [sendfetch]);
+  }, [sendfetch, props.url]);
 
   let content = <p>Can't found any movies</p>;
   if (movies) {
@@ -46,6 +49,7 @@ const MoviesList = (props) => {
               }`}
               id={movie.id}
               onClick={showMovieDetailHandler}
+              alt=""
             />
           </div>
         ))}
@@ -69,7 +73,7 @@ const MoviesList = (props) => {
         <MovieDetail
           onClose={hideMovieDetailHandler}
           id={movieDeTail.id}
-          title={movieDeTail.name}
+          title={movieDeTail.name ? movieDeTail.name : movieDeTail.title}
           releaseDate={movieDeTail.first_air_date}
           vote={movieDeTail.vote_average}
           overview={movieDeTail.overview}

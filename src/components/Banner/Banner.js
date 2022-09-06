@@ -13,7 +13,7 @@ const Banner = (props) => {
       setBannerMovie(loadedMovie);
     };
     sendfetch({ url: props.url }, receiveData);
-  }, [sendfetch]);
+  }, [sendfetch, props.url]);
   const backgroundUrl = `http://image.tmdb.org/t/p/w500/${bannerMovie.backdrop_path}`;
 
   let content = <p>Can't found any movies</p>;
