@@ -4,7 +4,7 @@ import Modal from "../UI/Modal";
 import useHttp from "../../hooks/use-http";
 const MovieDetail = (props) => {
   const { isLoading, error, sendRequest: sendfetch } = useHttp();
-  const [movieTrailer, setMovieTrailer] = useState([]);
+  const [movieTrailer, setMovieTrailer] = useState(null);
   console.log(props.id);
   //Lấy data
   useEffect(() => {
@@ -12,6 +12,7 @@ const MovieDetail = (props) => {
       const loadedTrailer = data.results;
       setMovieTrailer(loadedTrailer);
     };
+    console.log("send fetch");
     sendfetch(
       {
         url: `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=8d889bf8e18531838dd6a6f6a0ba836c`,
@@ -19,7 +20,7 @@ const MovieDetail = (props) => {
       receiveData
     );
   }, [sendfetch, props.id]);
-  console.log(movieTrailer);
+  console.log(movieTrailer); // e fectch lưu dữ liệu vào đây
   let content = <p>Can't found information of the movie!</p>;
   if (error) {
     content = <p>Something went wrong!</p>;

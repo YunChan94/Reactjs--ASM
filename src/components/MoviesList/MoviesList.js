@@ -11,7 +11,7 @@ const MoviesList = (props) => {
   const showMovieDetailHandler = (e) => {
     setMovieDetailIsShown(true);
     if (Number(e.target.id) === movieDetailId) {
-      setMovieDetailIsShown(!movieDetailIsShown);
+      setMovieDetailIsShown(false);
     }
     setMovieDetailId(Number(e.target.id));
   };
