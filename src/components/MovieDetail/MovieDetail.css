@@ -1,2 +1,21 @@
 .container {
+  /* position: fixed; */
+  width: 100%;
+  color: white;
+  background-color: rgba(17, 17, 17, 255);
+  padding: 1rem;
+  border-radius: 14px;
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

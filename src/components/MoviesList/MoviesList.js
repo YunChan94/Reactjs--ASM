@@ -11,7 +11,7 @@ const MoviesList = (props) => {
   const showMovieDetailHandler = (e) => {
     setMovieDetailIsShown(true);
     if (Number(e.target.id) === movieDetailId) {
-      setMovieDetailIsShown(false);
+      setMovieDetailIsShown(!movieDetailIsShown);
     }
     setMovieDetailId(Number(e.target.id));
   };
@@ -77,6 +77,7 @@ const MoviesList = (props) => {
           releaseDate={movieDeTail.first_air_date}
           vote={movieDeTail.vote_average}
           overview={movieDeTail.overview}
+          picture={movieDeTail.backdrop_path}
         />
       )}
     </section>
