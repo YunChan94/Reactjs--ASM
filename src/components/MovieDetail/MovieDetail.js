@@ -19,10 +19,11 @@ const MovieDetail = (props) => {
       receiveData
     );
   }, [sendfetch, props.id]);
-  console.log(movieTrailer);
 
-  // Khi không có dữ liệu video
-  let content = <img src={`http://image.tmdb.org/t/p/w200/${props.picture}`} />;
+  // Khi không có dữ liệu video, sử dụng ảnh backdrop
+  let content = (
+    <img src={`http://image.tmdb.org/t/p/w500/${props.picture}`} alt="" />
+  );
 
   // Khi có dữ liệu video
   if (movieTrailer.length !== 0) {
@@ -35,18 +36,26 @@ const MovieDetail = (props) => {
     };
 
     // lọc trailer từ dữ liệu nhận được có site= Youtube, type= Teaser hoặc Trailer
-    const trailerFilter = movieTrailer?.filter(
-      (movie) => movie.site === "Youtube" && movie.type === "Trailer"
+    const trailerFilter = movieTrailer.filter(
+      (movie) =>
+        movie.site === "YouTube" &&
+        (movie.type === "Trailer" || movie.type === "Teaser")
     );
-    console.log(trailerFilter);
-    // Nếu có 1 giá trị
-    // content = <YouTube videoId={trailerFilter[0].key} opts={opts} />;
+    console.log(trailerFilter[0]);
     // Nếu có nhiều giá trị, lấy video đầu tiên, ưu tiên trailer
     if (trailerFilter.length > 1) {
-      const trailer = trailerFilter.find(
-        (movie) => movie.type === "Trailer"
-      )[0];
-      // content = <YouTube videoId={trailer.key} opts={opts} />;
+      const trailer = trailerFilter.find((movie) => movie.type === "Trailer");
+
+      // Nếu có trailer
+      if (trailer.length !== 0) {
+        content = <YouTube videoId={trailer.key} opts={opts} />;
+      }
+
+      // Không có trailer
+      content = <YouTube videoId={trailerFilter[0].key} opts={opts} />;
+    } else {
+      // Nếu có 1 giá trị
+      content = <YouTube videoId={trailerFilter[0].key} opts={opts} />;
     }
   }
 

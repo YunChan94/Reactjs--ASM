@@ -1,12 +1,30 @@
 .container {
   /* position: fixed; */
-  width: 100%;
+  width: 95%;
   color: white;
   background-color: rgba(17, 17, 17, 255);
   padding: 1rem;
   border-radius: 14px;
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
+  /* position: relative; */
+  display: flex;
+}
+
+.detail {
+  width: 45%;
+  display: inline-block;
+}
+
+.detail h1 {
+  font-size: 2rem;
+  border-bottom: solid 0.1rem;
+  padding-bottom: 1rem;
+}
+.trailer {
+  width: 50%;
+  padding: 1rem;
+  display: inline-block;
 }
 
 @keyframes slide-down {
