@@ -23,6 +23,7 @@ const NavBar = () => {
   // Dẫn link đến trang Search
   const gotoSearch = () => {
     window.location.replace("/search");
+    console.log("gotoSearch");
   };
   return (
     <Fragment>

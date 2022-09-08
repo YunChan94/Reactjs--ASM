@@ -41,7 +41,7 @@ const MovieDetail = (props) => {
         movie.site === "YouTube" &&
         (movie.type === "Trailer" || movie.type === "Teaser")
     );
-    console.log(trailerFilter[0]);
+
     // Nếu có nhiều giá trị, lấy video đầu tiên, ưu tiên trailer
     if (trailerFilter.length > 1) {
       const trailer = trailerFilter.find((movie) => movie.type === "Trailer");

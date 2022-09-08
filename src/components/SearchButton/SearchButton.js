@@ -1,9 +1,9 @@
 import SearchIcon from "./SearchIcon";
 import "./SearchButton.css";
 import React from "react";
-const SearchButton = () => {
+const SearchButton = (props) => {
   return (
-    <button className="button">
+    <button className="button" onClick={props.onClick}>
       <span className="icon">
         <SearchIcon />
       </span>

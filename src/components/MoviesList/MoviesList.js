@@ -23,7 +23,7 @@ const MoviesList = (props) => {
 
   //Lấy dữ liệu của movie mở detail
   const movieDeTail = movies.find((movie) => movie.id === movieDetailId);
-  console.log(movieDeTail);
+
   // Lấy data Trending
   const { isLoading, error, sendRequest: sendfetch } = useHttp();
   useEffect(() => {

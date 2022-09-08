@@ -1,0 +1,42 @@
+.search-container {
+  width: 100%;
+  /* height: 30rem; */
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  width: 30rem;
+  height: 10rem;
+  background-color: white;
+  margin-top: 5rem;
+
+  /* border: solid rgb(29, 217, 241); */
+}
+
+.input {
+  width: 100%;
+  border-bottom: solid rgb(29, 217, 241);
+  display: flex;
+}
+
+.input input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+}
+
+.button {
+  margin: 10%;
+  display: flex;
+  justify-content: right;
+  gap: 0.5rem;
+}
+
+.button button {
+  background-color: rgb(29, 217, 241);
+  color: white;
+  padding: 0.5rem;
+  border: none;
+}
