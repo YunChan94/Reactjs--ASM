@@ -62,7 +62,7 @@ const MoviesList = (props) => {
   }
 
   if (isLoading) {
-    content = <p>Loading tasks...</p>;
+    content = <p>Loading...</p>;
   }
 
   return (

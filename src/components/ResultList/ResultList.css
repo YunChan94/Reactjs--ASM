@@ -1,0 +1,22 @@
+.search-result {
+  /* width: 100%; */
+  padding: 3%;
+}
+
+.searchItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.search-img {
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.search-img:hover {
+  transform: scale(1.1);
+}

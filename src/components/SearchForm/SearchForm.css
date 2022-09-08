@@ -19,14 +19,19 @@
   width: 100%;
   border-bottom: solid rgb(29, 217, 241);
   display: flex;
+  justify-items: center;
 }
 
 .input input {
   width: 100%;
   padding: 1rem;
-  border: none;
+  /* border: none; */
 }
 
+.search-icon {
+  color: grey;
+  /* width: 0.1rem; */
+}
 .button {
   margin: 10%;
   display: flex;
@@ -35,8 +40,12 @@
 }
 
 .button button {
-  background-color: rgb(29, 217, 241);
-  color: white;
   padding: 0.5rem;
   border: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(29, 217, 241);
+  color: white;
 }
