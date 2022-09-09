@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchIcon from "../SearchButton/SearchIcon";
+import SearchButton from "../SearchButton/SearchButton";
 import "./SearchForm.css";
 const SearchForm = (props) => {
   const [searchKey, setSearchKey] = useState("");
@@ -31,9 +31,9 @@ const SearchForm = (props) => {
             onChange={inputChangeHandler}
             value={searchKey}
           />
-          <SearchIcon />
+          <SearchButton className="search-icon" />
         </div>
-        <div className="button">
+        <div className="search-button">
           <button onClick={resetInputHandler}>RESET</button>
           <button className="active">SEARCH</button>
         </div>

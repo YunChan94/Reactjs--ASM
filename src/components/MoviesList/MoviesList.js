@@ -10,9 +10,11 @@ const MoviesList = (props) => {
   //Shown detail của movie
   const showMovieDetailHandler = (e) => {
     setMovieDetailIsShown(true);
+
     if (Number(e.target.id) === movieDetailId) {
       setMovieDetailIsShown(!movieDetailIsShown);
     }
+
     setMovieDetailId(Number(e.target.id));
   };
 

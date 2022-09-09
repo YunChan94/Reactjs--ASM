@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Browse.css";
 import NavBar from "../../components/NavBar/NavBar";
 import Banner from "../../components/Banner/Banner";
@@ -18,6 +18,11 @@ function Browse() {
     fetchSearch: `/search/movie?api_key=${API_KEY}&language=en-US`,
   };
 
+  // const [isShown, setIsShown] = useState(false);
+
+  // const toggleMovieDetail = (click) => {
+  //   setIsShown(!click);
+  // };
   return (
     <div className="app">
       <NavBar />

@@ -2,6 +2,7 @@
   background-color: inherit;
   /* justify-content: space-around; */
   cursor: pointer;
+  border: none;
 }
 .icon {
   width: 1.5rem;
