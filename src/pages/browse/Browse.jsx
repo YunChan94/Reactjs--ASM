@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Browse.css";
 import NavBar from "../../components/NavBar/NavBar";
 import Banner from "../../components/Banner/Banner";
@@ -28,13 +28,13 @@ function Browse() {
       <NavBar />
       <Banner url={requests.fetchNetflixOriginals} />
       <MoviesList url={requests.fetchNetflixOriginals} type="original" />
-      <MoviesList url={requests.fetchTrending} title="Xu hướng" />
-      <MoviesList url={requests.fetchTopRated} title="Xếp hạng cao" />
-      <MoviesList url={requests.fetchActionMovies} title="Hành động" />
-      <MoviesList url={requests.fetchComedyMovies} title="Hài" />
-      <MoviesList url={requests.fetchHorrorMovies} title="Kinh dị" />
-      <MoviesList url={requests.fetchRomanceMovies} title="Lãng mạn" />
-      <MoviesList url={requests.fetchDocumentaries} title="Tài liệu" />
+      <MoviesList url={requests.fetchTrending} id="Xu hướng" />
+      <MoviesList url={requests.fetchTopRated} id="Xếp hạng cao" />
+      <MoviesList url={requests.fetchActionMovies} id="Hành động" />
+      <MoviesList url={requests.fetchComedyMovies} id="Hài" />
+      <MoviesList url={requests.fetchHorrorMovies} id="Kinh dị" />
+      <MoviesList url={requests.fetchRomanceMovies} id="Lãng mạn" />
+      <MoviesList url={requests.fetchDocumentaries} id="Tài liệu" />
     </div>
   );
 }

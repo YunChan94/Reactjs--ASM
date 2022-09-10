@@ -14,8 +14,9 @@
   font-size: 2rem;
 }
 
-.banner-title p {
+.banner-desc {
   color: white;
+  height: 10rem;
 }
 
 .banner-btn {

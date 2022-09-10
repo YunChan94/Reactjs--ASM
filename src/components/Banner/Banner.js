@@ -31,7 +31,9 @@ const Banner = (props) => {
             <button>Play</button>
             <button>My List</button>
           </div>
-          <p>{bannerMovie.overview}</p>
+          <div className="banner-desc">
+            <p>{bannerMovie.overview}</p>
+          </div>
         </div>
       </div>
     );

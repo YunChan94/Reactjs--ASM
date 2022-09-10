@@ -13,7 +13,7 @@ const Search = () => {
     <div className="app">
       <NavBar />
       <SearchForm onSearch={searchHandler} />
-      <ResultList query={searchKey} />
+      <ResultList query={searchKey} id="results" />
     </div>
   );
 };

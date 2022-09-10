@@ -69,7 +69,7 @@ const MoviesList = (props) => {
 
   return (
     <section className="moviesList">
-      <h3>{props.title}</h3>
+      <h3>{props.id}</h3>
       {content}
       {movieDetailIsShown && (
         <MovieDetail
