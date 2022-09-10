@@ -19,7 +19,7 @@ const SearchForm = (props) => {
   const resetInputHandler = () => {
     setSearchKey("");
   };
-  //   const icon = <SearchIcon />;
+
   return (
     <section className="search-container" onSubmit={submitHandler}>
       <form className="search-form">

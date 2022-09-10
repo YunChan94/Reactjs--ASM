@@ -20,6 +20,7 @@ const NavBar = () => {
   } else {
     headerColorClasses = "header scroll";
   }
+
   // Dẫn link đến trang Search
   const gotoSearch = () => {
     window.location.replace("/search");
